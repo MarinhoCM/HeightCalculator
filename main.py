@@ -1,3 +1,4 @@
+from typing import List
 class HeightCalculator:
     def __init__(self: object, num_people: int) -> None:
         self.__num_people = num_people
@@ -8,10 +9,10 @@ class HeightCalculator:
         return self.__num_people
     
     @property
-    def heights(self: object) -> list:
+    def heights(self: object) -> List[int]:
         return self.__heights
     
-    def collect_heights(self) -> None:
+    def collect_heights(self: object) -> None:
         try:
             for i in range(self.num_people):
                 while True:
@@ -36,7 +37,7 @@ class HeightCalculator:
         except KeyboardInterrupt:
             print("\n"+40*"--")
 
-    def calculate_statistics(self) -> None:
+    def calculate_statistics(self: object) -> None:
         if not self.heights:
             print("Nenhuma altura fornecida.")
             return
@@ -54,7 +55,7 @@ class HeightCalculator:
         )
         print(f"Pessoas com altura abaixo da média: {below_average_count}")
         
-    def __str__(self) -> str:
+    def __str__(self: object) -> str:
         return (
             """\t\tConsidere a realização de uma pesquisa com 1 000
                 pessoas para obtenção das seguintes informações:
